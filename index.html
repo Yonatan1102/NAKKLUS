@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NAKKLU'S | Pura Conversa</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<header class="navbar">
+    <button class="menu-toggle" onclick="toggleMenu()">
+        <img src="imagenes/taza.png" alt="Menú" onerror="this.outerHTML='<span class=hamburger-icon>☰</span>'">
+    </button>
+    <div class="logo">NAKKLU'S</div>
+    <nav id="menu">
+        <a href="#inicio">Inicio</a>
+        <a href="#nuestro-cafe">Nuestro café</a>
+        <a href="#porque-colombiano">¿Por qué colombiano?</a>
+        <a href="#beneficios">Beneficios</a>
+        <a href="#sostenibilidad">Sostenibilidad</a>
+        <a href="#proceso">Proceso</a>
+        <a href="#tiendas">Tiendas</a>
+        <a href="#contacto">Contacto</a>
+    </nav>
+</header>
+
+<!-- HERO -->
+<section id="inicio" class="hero">
+    <div class="hero-content">
+        <h1>Pura Conversa</h1>
+        <h3>Premium Colombian Coffee, Now in Canada</h3>
+        <button class="btn-hero" onclick="scrollTienda()">Find it at Dollarama</button>
+    </div>
+</section>
+
+<!-- NUESTRO CAFÉ -->
+<section id="nuestro-cafe" class="section section-cafe">
+    <h2 class="section-title">Nuestro Café</h2>
+    <p class="section-hint" style="color: rgb(27, 10, 4);">Pasa el mouse por cada card y haz clic para conocer más</p>
+
+    <div class="grid-cafe">
+        <div class="card-cafe" onclick="abrirModal('producto')">
+            <div class="card-img-wrap">
+                <img src="imagenes/PRODUCTO.jpeg" alt="Producto">
+                <div class="card-hover-overlay"><span>Ver más →</span></div>
+            </div>
+            <div class="card-body">
+                <h3> Producto</h3>
+                <p>Café colombiano liofilizado que conserva las características del café recién tostado</p>
+            </div>
+        </div>
+
+        <div class="card-cafe" onclick="abrirModal('origen')">
+            <div class="card-img-wrap">
+                <img src="imagenes/origen.png" alt="Sostenibilidad" onerror="this.src='imagenes/finca.png'">
+                <div class="card-hover-overlay"><span>Ver más →</span></div>
+            </div>
+            <div class="card-body">
+                <h3> Sostenibilidad</h3>
+                <p>Café cultivado en fincas colombianas de altura con comercio justo</p>
+            </div>
+        </div>
+
+        <div class="card-cafe" onclick="abrirModal('grano')">
+            <div class="card-img-wrap">
+                <img src="imagenes/liofilizado.png" alt="Liofilización" onerror="this.src='https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=600'">
+                <div class="card-hover-overlay"><span>Ver más →</span></div>
+            </div>
+            <div class="card-body">
+                <h3> Producción</h3>
+                <p>Granos arábica seleccionados con proceso de liofilización</p>
+            </div>
+        </div>
+
+        <div class="card-cafe" onclick="abrirModal('sabor')">
+            <div class="card-img-wrap">
+                <img src="imagenes/suelo.jpg" alt="Perfil de Sabor" onerror="this.src='https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=600'">
+                <div class="card-hover-overlay"><span>Ver más →</span></div>
+            </div>
+            <div class="card-body">
+                <h3> Perfil de Sabor</h3>
+                <p>Aroma intenso, sabor balanceado y cuerpo medio</p>
+            </div>
+        </div>
+
+        <div class="card-cafe" onclick="abrirModal('presentacion')">
+            <div class="card-img-wrap">
+                <img src="imagenes/PRODUCTO2.jpeg" alt="Presentación">
+                <div class="card-hover-overlay"><span>Ver más →</span></div>
+            </div>
+            <div class="card-body">
+                <h3> Presentación</h3>
+                <p>Envase de vidrio reutilizable premium de 95g</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- MODAL -->
+<div id="modal-overlay" onclick="cerrarModal()">
+    <div id="modal-box" onclick="event.stopPropagation()">
+        <button class="modal-cerrar" onclick="cerrarModal()">✕</button>
+        <img id="modal-img" src="" alt="">
+        <div class="modal-contenido">
+            <h2 id="modal-titulo"></h2>
+            <div id="modal-texto"></div>
+            <ul id="modal-lista"></ul>
+        </div>
+    </div>
+</div>
+
+<!-- POR QUÉ COLOMBIANO -->
+<section id="porque-colombiano" class="section section-colombiano">
+    <h2 class="section-title gold">¿Por qué Café Colombiano?</h2>
+    <div class="cards-grid">
+        <div class="card-prueba">
+            <img class="card-img-bg" src="https://fncantioquia.org/wp-content/uploads/2021/02/fincas-15-1024x675.jpg" alt="Altitud">
+            <div class="card-overlay">
+                <div class="card-tag">Altitud</div>
+                <h3>Altura Ideal</h3>
+                <h5>Cultivado entre 1.000 y 2.000 metros sobre el nivel del mar</h5>
+            </div>
+        </div>
+        <div class="card-prueba">
+            <img class="card-img-bg" src="https://i.pinimg.com/736x/27/5b/33/275b334b9fc693dfb5246c8d259995b6.jpg" alt="Suelos">
+            <div class="card-overlay">
+                <div class="card-tag">Sostenibilidad</div>
+                <h3>Suelos Ricos</h3>
+                <h5>Prácticas agrícolas responsables que respetan el ecosistema andino</h5>
+            </div>
+        </div>
+        <div class="card-prueba">
+            <img class="card-img-bg" src="https://i.pinimg.com/736x/95/4c/d7/954cd74d9dd3b33a50239961513a9f51.jpg" alt="Recolección">
+            <div class="card-overlay">
+                <div class="card-tag">Export Grade</div>
+                <h3>Recolección</h3>
+                <h5>Manual, grano a grano, para garantizar la más alta calidad</h5>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- BENEFICIOS -->
+<section id="beneficios" class="section section-beneficios">
+    <div class="beneficios-header">
+        <span class="beneficios-eyebrow">Lo que nos hace únicos</span>
+        <h2 class="section-title">Beneficios</h2>
+        <p class="beneficios-sub">Cada detalle de Pura Conversa fue diseñado para entregarte la mejor experiencia</p>
+    </div>
+    <div class="beneficios-grid">
+        <div class="beneficio-card">
+            <div class="beneficio-icon-wrap">
+                <span class="beneficio-icon">🇨🇴</span>
+            </div>
+            <h4>100% Colombiano</h4>
+            <p>Origen certificado de las mejores regiones cafeteras de Colombia</p>
+        </div>
+        <div class="beneficio-card">
+            <div class="beneficio-icon-wrap">
+                <span class="beneficio-icon">🌿</span>
+            </div>
+            <h4>Aroma Original</h4>
+            <p>Proceso de liofilización que conserva cada nota aromática intacta</p>
+        </div>
+        <div class="beneficio-card">
+            <div class="beneficio-icon-wrap">
+                <span class="beneficio-icon">⚡</span>
+            </div>
+            <h4>Preparación Rápida</h4>
+            <p>Listo en segundos, sin equipos especiales ni técnicas complicadas</p>
+        </div>
+        <div class="beneficio-card">
+            <div class="beneficio-icon-wrap">
+                <span class="beneficio-icon">💧</span>
+            </div>
+            <h4>Alta Solubilidad</h4>
+            <p>Se disuelve perfectamente en agua caliente o fría sin residuos</p>
+        </div>
+        <div class="beneficio-card">
+            <div class="beneficio-icon-wrap">
+                <span class="beneficio-icon">⚖️</span>
+            </div>
+            <h4>Perfil Balanceado</h4>
+            <p>Acidez suave, cuerpo medio y un final largo y satisfactorio</p>
+        </div>
+        <div class="beneficio-card">
+            <div class="beneficio-icon-wrap">
+                <span class="beneficio-icon">📅</span>
+            </div>
+            <h4>Larga Duración</h4>
+            <p>Hasta 24 meses de vida útil sin pérdida significativa de calidad</p>
+        </div>
+        <div class="beneficio-card">
+            <div class="beneficio-icon-wrap">
+                <span class="beneficio-icon">♻️</span>
+            </div>
+            <h4>Envase Reutilizable</h4>
+            <p>Frasco de vidrio premium pensado para una segunda vida útil</p>
+        </div>
+    </div>
+</section>
+
+<!-- SOSTENIBILIDAD -->
+<section id="sostenibilidad" class="section section-sostenibilidad">
+    <div class="sost-bg-overlay"></div>
+    <div class="sost-content">
+        <span class="sost-eyebrow">Nuestro compromiso</span>
+        <h2 class="section-title">Sostenibilidad</h2>
+        <p class="sost-intro">Cada taza de Pura Conversa es el resultado de un modelo consciente que respeta a las personas y al planeta.</p>
+        <div class="sost-grid">
+            <div class="sost-card">
+                <div class="sost-card-icon">🤝</div>
+                <div class="sost-card-body">
+                    <h4>Apoyo a Caficultores</h4>
+                    <p>Relaciones directas y duraderas con las familias productoras de las regiones cafeteras de Colombia</p>
+                </div>
+            </div>
+            <div class="sost-card">
+                <div class="sost-card-icon">⚖️</div>
+                <div class="sost-card-body">
+                    <h4>Comercio Justo</h4>
+                    <p>Precios justos y condiciones transparentes que fortalecen las economías rurales colombianas</p>
+                </div>
+            </div>
+            <div class="sost-card">
+                <div class="sost-card-icon">🌱</div>
+                <div class="sost-card-body">
+                    <h4>Producción Responsable</h4>
+                    <p>Minimizamos residuos y el impacto ambiental optimizando cada etapa del proceso productivo</p>
+                </div>
+            </div>
+            <div class="sost-card">
+                <div class="sost-card-icon">♻️</div>
+                <div class="sost-card-body">
+                    <h4>Envase Reutilizable</h4>
+                    <p>Nuestro frasco de vidrio premium está diseñado para tener una segunda vida en tu hogar</p>
+                </div>
+            </div>
+        </div>
+        <blockquote class="sost-quote">
+            "Cada taza de Pura Conversa es un homenaje a la dedicación y pasión de las familias caficultoras colombianas."
+        </blockquote>
+    </div>
+</section>
+
+<!-- PROCESO -->
+<section id="proceso" class="section">
+    <h2 class="section-title">Proceso de Producción</h2>
+    <div class="proceso-lista">
+        <div class="paso">Selección de granos</div>
+        <div class="paso">Extracción del café</div>
+        <div class="paso">Congelación rápida</div>
+        <div class="paso">Liofilización</div>
+        <div class="paso">Conservación del aroma</div>
+        <div class="paso">Empaque premium</div>
+    </div>
+</section>
+
+<!-- TIENDAS -->
+<section id="tiendas" class="section section-tiendas">
+    <h2 class="section-title">Encuentra una tienda</h2>
+    <p>Escribe tu ciudad y encuentra el Dollarama más cercano con <strong>NAKKLUS</strong></p>
+    <div class="buscador">
+        <input type="text" id="ciudad" placeholder="Ej: Toronto, Vancouver, Montreal...">
+        <button onclick="buscar()">Buscar</button>
+    </div>
+    <div class="mapa-wrapper">
+        <div id="panel-tiendas">
+            <h3>Tiendas encontradas</h3>
+            <div id="lista-tiendas"></div>
+        </div>
+        <iframe id="mapa" src="https://maps.google.com/maps?q=Dollarama+Toronto+Canada&output=embed"></iframe>
+    </div>
+</section>
+
+<!-- FOOTER / CONTACTO -->
+<footer id="contacto">
+    <p class="footer-logo">NAKKLU'S</p>
+    <p>Premium Colombian Coffee | Colombia 🇨🇴</p>
+    <p>📧 info@nakklus.com</p>
+    <p>🟢 WhatsApp: +57 XXX XXX XXXX</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
